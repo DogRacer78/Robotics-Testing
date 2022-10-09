@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.IO.Compression;
 
 public class CarController : MonoBehaviour
 {
@@ -15,15 +16,6 @@ public class CarController : MonoBehaviour
     private float motorTorque;
 
     private bool brake = false;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Debug.Log(rpmCounter.GetComponent<TMPro.TextMeshProUGUI>().text);
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //get the input
@@ -40,7 +32,6 @@ public class CarController : MonoBehaviour
         //set the steering angle of the front wheels
         foreach (Axle axle in axles)
         {
-            float 
             steering = Input.GetAxis("Horizontal") * maxSteeringAngle;
             motorTorque = Input.GetAxis("Vertical") * maxMotorTorque;
 
@@ -57,10 +48,12 @@ public class CarController : MonoBehaviour
                 //axle.right.brakeTorque = 100;
                 ////continue;
                 axle.left.wheelDampingRate = 100;
-                axle.left.wheelDampingRate = 100;
+                axle.right.wheelDampingRate = 100;
             }
             else
             {
+                axle.left.wheelDampingRate = 1;
+                axle.right.wheelDampingRate = 1;
                 //axle.left.brakeTorque = 0;
                 //axle.right.brakeTorque = 0;
             }
@@ -70,9 +63,39 @@ public class CarController : MonoBehaviour
                 axle.left.motorTorque = motorTorque;
                 axle.right.motorTorque = motorTorque;
             }
+
+            UpdateWheels(axle);
         }
 
         //can use wheel damping as brakes
-        rpmCounter.GetComponent<TMPro.TextMeshProUGUI>().text = "RPM: " + Math.Round(axles[1].left.rpm, 2).ToString();
+        rpmCounter.GetComponent<TMPro.TextMeshProUGUI>().text = Math.Round(MeterSecondToKPH(GetSpeed(axles[0].left))).ToString() + " KM/H";
+    }
+
+    private void UpdateWheelPosition(WheelCollider collider, Transform wheelTransform)  
+    {
+        Vector3 pos;
+        Quaternion rot;
+        collider.GetWorldPose(out pos, out rot);
+        wheelTransform.position = pos;
+        wheelTransform.rotation = rot;
+    }
+
+    private void UpdateWheels(Axle axle)
+    {
+        UpdateWheelPosition(axle.left, axle.leftWheelTransform);
+        UpdateWheelPosition(axle.right, axle.rightWheelTransform);
+    }
+
+    private double GetSpeed(WheelCollider wheel)
+    {
+        float rps = wheel.rpm / 60.0f;
+        double anglurVelocity = rps * 2 * Math.PI;
+        double velocity = anglurVelocity * wheel.radius;
+        return velocity; // returns in m/s
+    }
+
+    private double MeterSecondToKPH(double velocity)
+    {
+        return velocity / 1000.0 * 3600.0;
     }
 }

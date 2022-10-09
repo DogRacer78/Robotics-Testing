@@ -1,0 +1,4 @@
+https://hackaday.io/project/12989-thor
+https://esa-prl.github.io/ExoMy/
+https://github.com/mjyc/awesome-robotics-projects
+https://www.eng.yale.edu/grablab/openrobothardware.html
