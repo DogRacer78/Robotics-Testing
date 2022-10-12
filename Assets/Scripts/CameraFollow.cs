@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float positionSpeed;
     [SerializeField] private float rotationSpeed;
 
+    public bool enabled = true;
+
     private Transform camera;
 
     private void Start()
@@ -18,7 +20,8 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HandleTranslation();
+        if (enabled)
+            HandleTranslation();
     }
 
     private void HandleTranslation()
