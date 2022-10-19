@@ -3,3 +3,4 @@ https://esa-prl.github.io/ExoMy/
 https://github.com/mjyc/awesome-robotics-projects
 https://www.eng.yale.edu/grablab/openrobothardware.html
 https://github.com/Unity-Technologies/articulations-robot-demo
+http://thor.angel-lm.com/
