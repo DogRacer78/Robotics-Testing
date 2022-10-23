@@ -44,6 +44,7 @@ public class RobotController : MonoBehaviour
             ArticulationBody articulation = part.part.GetComponent<ArticulationBody>();
             float currentRotation = CurrentPrimaryAxisRotation(articulation);
             float rotationGoal = currentRotation + (speed * Time.fixedDeltaTime) * (int)part.part.GetComponent<RobotBodyPartController>().rotation;
+            rotationGoal = Mathf.Round(rotationGoal);
             RotateTo(rotationGoal, articulation);
 
             //Debug.Log(rotationGoal);
