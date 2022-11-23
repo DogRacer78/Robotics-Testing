@@ -18,7 +18,7 @@ public class RotateGripper : MonoBehaviour
     {
         // 
         float rots = -(movingArmTransform.rotation.eulerAngles.x - 270.0f);
-        Debug.Log("Rots: " + (movingArmTransform.rotation.eulerAngles.x - 270.0f));
+        //Debug.Log("Rots: " + (movingArmTransform.rotation.eulerAngles.x - 270.0f));
         RotateTo(-movingArm.GetComponent<ArticulationBody>().xDrive.target, art);
     }
 

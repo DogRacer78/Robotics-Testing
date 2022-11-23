@@ -2876,6 +2876,7 @@ MonoBehaviour:
   rotation: 0
   posKey: 122
   negKey: 120
+  useController: 0
 --- !u!171741748 &590896411
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -3597,6 +3598,7 @@ MonoBehaviour:
   rotation: 0
   posKey: 119
   negKey: 115
+  useController: 0
 --- !u!4 &698909901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9639e219b62dd124b95a8d8f4193c5fe, type: 3}
@@ -5838,6 +5840,7 @@ MonoBehaviour:
   rotation: 0
   posKey: 100
   negKey: 97
+  useController: 1
 --- !u!64 &1100117451
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5852,6 +5855,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1638553584864220419, guid: 6aad7c66e21321b4faa25d1afa65c4d2, type: 3}
+--- !u!114 &1100117452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100117446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8935b2fc89e550648b0b6edea2ad5502, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: RobotMovement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1104015249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5541703085391794123, guid: a9bd85eed2f56e644bd34457ca602c97, type: 3}
@@ -6052,6 +6085,7 @@ MonoBehaviour:
   rotation: 0
   posKey: 275
   negKey: 276
+  useController: 0
 --- !u!171741748 &1139110330
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -6628,6 +6662,7 @@ MonoBehaviour:
   rotation: 0
   posKey: 273
   negKey: 274
+  useController: 0
 --- !u!171741748 &1244348769
 ArticulationBody:
   m_ObjectHideFlags: 0
@@ -15744,7 +15779,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8460305518898493310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b70a3a704836a144af67dd850c450fc, type: 3}
   m_Name: 
@@ -16329,7 +16364,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3499995703329056297}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b70a3a704836a144af67dd850c450fc, type: 3}
   m_Name: 

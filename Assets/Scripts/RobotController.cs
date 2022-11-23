@@ -13,7 +13,6 @@ public class RobotController : MonoBehaviour
 
     [SerializeField] private Joint[] joints;
 
-    private float horizontal = 0.0f;
     //private RotationDir rotationDir = RotationDir.None;
     private void Start()
     {
@@ -22,7 +21,7 @@ public class RobotController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        horizontal = Input.GetAxis("Horizontal");
+
         
         /*
         if (horizontal == 0.0f)

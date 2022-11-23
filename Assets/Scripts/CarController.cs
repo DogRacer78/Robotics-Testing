@@ -20,11 +20,12 @@ public class CarController : MonoBehaviour
     {
         //get the input
         
-
+        /*
         if (Input.GetKey(KeyCode.Space))
             brake = true;
         else
             brake = false;
+        */
     }
 
     private void FixedUpdate()
@@ -32,8 +33,10 @@ public class CarController : MonoBehaviour
         //set the steering angle of the front wheels
         foreach (Axle axle in axles)
         {
+            /*
             steering = Input.GetAxis("Horizontal") * maxSteeringAngle;
             motorTorque = Input.GetAxis("Vertical") * maxMotorTorque;
+            */
 
             if (axle.steering)
             {
@@ -68,7 +71,7 @@ public class CarController : MonoBehaviour
         }
 
         //can use wheel damping as brakes
-        rpmCounter.GetComponent<TMPro.TextMeshProUGUI>().text = Math.Round(MeterSecondToKPH(GetSpeed(axles[0].left))).ToString() + " KM/H";
+        //rpmCounter.GetComponent<TMPro.TextMeshProUGUI>().text = Math.Round(MeterSecondToKPH(GetSpeed(axles[0].left))).ToString() + " KM/H";
     }
 
     private void UpdateWheelPosition(WheelCollider collider, Transform wheelTransform)  

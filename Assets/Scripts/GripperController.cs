@@ -17,6 +17,7 @@ public class GripperController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         if (Input.GetKey(KeyCode.K))
         {
             float currentRotation = CurrentPrimaryAxisRotation(art);
@@ -46,6 +47,7 @@ public class GripperController : MonoBehaviour
             }
             RotateTo(rotationGoal, art);
         }
+        */
         
     }
 
